@@ -13,7 +13,7 @@ import { CarouselCard } from "./CarouselCard";
 import { useState } from "react";
 
 export function CarouselDemo() {
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
   return (
     <div>
       <Carousel
@@ -36,16 +36,16 @@ export function CarouselDemo() {
     </div>
   );
 }
-type IndicatorProps = {
-  active: boolean;
-  onClick: () => void;
-};
+// type IndicatorProps = {
+//   active: boolean;
+//   onClick: () => void;
+// };
 
-const Indicator = ({ active, onClick }) => {
-  return (
-    <div
-      className={`w-6 h-6 rounded-md bg-red-400 ${active ? "bg-red-200" : ""}`}
-      onClick={onClick}
-    ></div>
-  );
-};
+// const Indicator = ({ active, onClick }) => {
+//   return (
+//     <div
+//       className={`w-6 h-6 rounded-md bg-red-400 ${active ? "bg-red-200" : ""}`}
+//       onClick={onClick}
+//     ></div>
+//   );
+// };

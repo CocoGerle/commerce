@@ -1,4 +1,5 @@
 import { CarouselDemo } from "@/components/Carousel";
+import { CarouselSpacing } from "@/components/Featured";
 import { Header } from "@/components/Header";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div>
       <Header />
       <CarouselDemo />
+      <CarouselSpacing />
     </div>
   );
 }
