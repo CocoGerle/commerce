@@ -1,8 +1,8 @@
 "use client";
 
-import { Facebook } from "./assest/icons/Facebook";
-import { Instagram } from "./assest/icons/Instagram";
-import { Twitter } from "./assest/icons/Twitter";
+import { Facebook } from "./assets/icons/Facebook";
+import { Instagram } from "./assets/icons/Instagram";
+import { Twitter } from "./assets/icons/Twitter";
 
 // import { Instagram } from "@/assets/Instagram";
 
