@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 export const CarouselCard = () => {
   return (
-    <div className="bg-[#EAD6D5] w-full h-[764px] flex ">
+    <div className="bg-[#F2EFFF] w-full h-[764px] flex ">
       <div className="flex flex-1  flex-col justify-center pl-[375px] ">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
         <h1 className="text-[53px] font-extrabold mb-[24px]">

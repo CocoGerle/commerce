@@ -1,21 +1,28 @@
 "use client";
-import * as React from "react";
+import { useState, useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { CarouselCard } from "./CarouselCard";
-import { useState } from "react";
 
 export function CarouselDemo() {
-  // const [active, setActive] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const totalSlides = 3;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % totalSlides);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [totalSlides]);
+
   return (
-    <div>
+    <div className="relative">
       <Carousel
         plugins={[
           Autoplay({
@@ -24,7 +31,7 @@ export function CarouselDemo() {
         ]}
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {Array.from({ length: totalSlides }).map((_, index) => (
             <CarouselItem key={index}>
               <div>
                 <CarouselCard />
@@ -33,19 +40,17 @@ export function CarouselDemo() {
           ))}
         </CarouselContent>
       </Carousel>
+
+      <div className="absolute bottom-12 left-2/4 transform -translate-x-2/4 flex gap-3">
+        {Array.from({ length: totalSlides }).map((_, index) => (
+          <div
+            key={index}
+            className={`w-2 h-2 rotate-45 ${
+              activeIndex === index ? "bg-[#FB2E86]" : "border border-[#FB2E86]"
+            }`}
+          ></div>
+        ))}
+      </div>
     </div>
   );
 }
-// type IndicatorProps = {
-//   active: boolean;
-//   onClick: () => void;
-// };
-
-// const Indicator = ({ active, onClick }) => {
-//   return (
-//     <div
-//       className={`w-6 h-6 rounded-md bg-red-400 ${active ? "bg-red-200" : ""}`}
-//       onClick={onClick}
-//     ></div>
-//   );
-// };
